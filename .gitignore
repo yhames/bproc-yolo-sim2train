@@ -6,6 +6,9 @@ output/
 *.jpg
 *.jpeg
 *.hdf5
+*.mtl
+*.obj
+*.usd
 
 .idea/
 .vscode/
