@@ -1,0 +1,8 @@
+BlenderProc/
+isaacsim-example/
+output/
+.venv/
+*.png
+*.jpg
+*.jpeg
+*.hdf5
