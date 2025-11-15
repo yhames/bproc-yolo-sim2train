@@ -3,6 +3,15 @@ YOLO 학습 스크립트
 """
 
 from ultralytics import YOLO
+import torch
+
+# GPU 사용 가능 여부 확인
+if torch.cuda.is_available():
+    device = 0
+    print(f"✓ GPU 사용: {torch.cuda.get_device_name(0)}")
+else:
+    device = 'cpu'
+    print("⚠ CPU 사용")
 
 # 모델 로드
 model = YOLO('yolo11n.pt')
@@ -13,7 +22,7 @@ results = model.train(
     epochs=50,
     batch=16,
     imgsz=640,
-    device='cpu',
+    device=device,
     project='runs/detect',
     name='train',
     exist_ok=True,
