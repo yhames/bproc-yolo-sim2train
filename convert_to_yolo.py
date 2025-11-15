@@ -187,8 +187,8 @@ def convert_all_hdf5_to_yolo(input_dir="dataset/raw", output_dir="dataset/yolo",
         image_file = f"{scene_name}_cam{camera_idx}.png"
         label_file = f"{scene_name}_cam{camera_idx}.txt"
         
-        (temp_output / "images" / image_file).rename(output_path / "images" / "train" / image_file)
-        (temp_output / "labels" / label_file).rename(output_path / "labels" / "train" / label_file)
+        (temp_output / "images" / image_file).replace(output_path / "images" / "train" / image_file)
+        (temp_output / "labels" / label_file).replace(output_path / "labels" / "train" / label_file)
         
         total_images += 1
         total_objects += num_objects
@@ -208,8 +208,8 @@ def convert_all_hdf5_to_yolo(input_dir="dataset/raw", output_dir="dataset/yolo",
         image_file = f"{scene_name}_cam{camera_idx}.png"
         label_file = f"{scene_name}_cam{camera_idx}.txt"
         
-        (temp_output / "images" / image_file).rename(output_path / "images" / "val" / image_file)
-        (temp_output / "labels" / label_file).rename(output_path / "labels" / "val" / label_file)
+        (temp_output / "images" / image_file).replace(output_path / "images" / "val" / image_file)
+        (temp_output / "labels" / label_file).replace(output_path / "labels" / "val" / label_file)
         
         total_images += 1
         total_objects += num_objects
