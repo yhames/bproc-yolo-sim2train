@@ -1,13 +1,14 @@
-import bpy
 import os
+
+import bpy
 
 # ======================================================
 # 사용자 설정
 # ======================================================
 # 현재 스크립트 위치 기준으로 경로 설정
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-USD_FOLDER = os.path.join(SCRIPT_DIR, "assets", "ycb_usd")      # USD 파일들이 있는 폴더
-OUTPUT_FOLDER = os.path.join(SCRIPT_DIR, "assets", "ycb_obj")   # OBJ로 변환될 폴더
+USD_FOLDER = os.path.join(SCRIPT_DIR, "assets", "ycb_usd")  # USD 파일들이 있는 폴더
+OUTPUT_FOLDER = os.path.join(SCRIPT_DIR, "assets", "ycb_obj")  # OBJ로 변환될 폴더
 
 print(f"[INFO] USD 폴더: {USD_FOLDER}")
 print(f"[INFO] 출력 폴더: {OUTPUT_FOLDER}")
@@ -20,6 +21,7 @@ if not os.path.exists(USD_FOLDER):
 # 출력 폴더 없으면 생성
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
+
 # ======================================================
 # 변환 함수
 # ======================================================
@@ -31,7 +33,7 @@ def convert_usd_to_obj(usd_path, output_path):
     bpy.ops.wm.usd_import(filepath=usd_path)
 
     print(f"[INFO] Exporting OBJ: {output_path}")
-    
+
     # Blender 4.2+ 에서는 wm.obj_export 사용
     try:
         bpy.ops.wm.obj_export(
