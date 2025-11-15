@@ -1,7 +1,0 @@
-# YOLO Dataset Configuration
-path: C:\Projects\blenderproc-practice\dataset\yolo
-train: images
-val: images
-
-nc: 4
-names: ['meat_can', 'banana', 'marker', 'soup_can']
