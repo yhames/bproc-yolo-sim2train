@@ -13,7 +13,6 @@ runs/
 *.mtl
 *.obj
 *.usd
-*.txt
 *.log
 *.pyc
 *.pt
